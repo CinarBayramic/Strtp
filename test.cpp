@@ -38,7 +38,7 @@ setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
     std::cout << "Received:" << buffer << "\n";
     //std::string msg = buffer;
 
-    std::string msg = "<html><body><h1>siteye giriş yapılma sayısı:"+ std::to_string(total) + "</h1></body></html>";
+    std::string msg = "<html><body><h1>siteye giriş yapılma sayısı:"+ std::to_string(total) + "</h1>\n<p>sayfa adı: "+replaceall(tok[searchfor(tok,"GET")+1],"%20"," ")+"</p></body></html>";
 std::string header = "HTTP/1.1 200 OK\r\n"
                   "Access-Control-Allow-Origin: *\r\n"
                   "Connection: Keep-Alive\r\n"
